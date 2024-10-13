@@ -31,7 +31,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] text-white bg-black select-none">
+    <div className="min-h-screen p-4 sm:p-8 pb-20 sm:pb-20 font-[family-name:var(--font-geist-sans)] text-white bg-black select-none">
       <Navigation />
       <Carousel data={moviesData} title="Movies" isMovie={true} />
       <Carousel data={tvData} title="TV Shows" isMovie={false} />

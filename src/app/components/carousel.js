@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -14,7 +14,7 @@ const Carousel = ({ data, title, isMovie }) => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={15}
-        slidesPerView={6}
+        slidesPerView={1}
         loop={false}
         autoplay={{ delay: 3000 }}
         navigation
@@ -22,11 +22,13 @@ const Carousel = ({ data, title, isMovie }) => {
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 },
+          1536: { slidesPerView: 6 },
         }}
       >
         {data.results.map((item) => (
           <SwiperSlide key={item.id}>
-            <Link href={`/movie/${item.id}`} passHref>
+            <Link href={`/${isMovie ? 'movie' : 'tv'}/${item.id}`} passHref>
               <div className="bg-black rounded-lg shadow-md overflow-hidden h-full flex flex-col cursor-pointer transform transition-transform duration-300 hover:scale-105">
                 <div className="relative w-full h-48">
                   <Image
