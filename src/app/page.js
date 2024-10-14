@@ -44,7 +44,7 @@ export default async function Home() {
         <Carousel data={tvData} title="TV Shows" isMovie={false} />
       </Suspense>
       <Suspense fallback={<Loading />}>
-        <Carousel data={musicMoviesData} title="Music Movies" isMovie={true} />
+        <Carousel data={musicMoviesData} title="Musical Movies" isMovie={true} />
       </Suspense>
       <Suspense fallback={<Loading />}>
         <Carousel data={sciFiMoviesData} title="Sci-Fi Movies" isMovie={true} />
