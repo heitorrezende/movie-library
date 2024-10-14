@@ -13,6 +13,7 @@ const MovieCard = ({ item, type }) => {
   return (
     <div
       className="bg-black rounded-lg shadow-md overflow-hidden h-full flex flex-col cursor-pointer transform transition-transform duration-300 hover:scale-105"
+      data-testid="movie-card"
       onClick={handleResultClick}
     >
       <div className="relative w-full h-48">
