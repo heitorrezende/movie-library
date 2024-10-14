@@ -15,15 +15,12 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link href="/tv-shows" className="hover:underline">
+          <Link href="/tvshows" className="hover:underline">
             TV Shows
           </Link>
         </li>
         <li>
-          <Link href="/about" className="hover:underline">
-            About
-          </Link>
-        </li>
+       </li>
       </ul>
     </nav>
   );

@@ -5,6 +5,7 @@ import useSWR from "swr";
 import { useState } from "react";
 import VideoPlayer from "@/app/components/videoPlayer";
 import PlayButton from "@/app/components/playButton";
+import Loading from "@/app/components/loading";
 
 const MoviePage = ({ params }) => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -20,7 +21,7 @@ const MoviePage = ({ params }) => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   if (isLoading) {
-    return <div>Loading movie data...</div>;
+    return <Loading/>
   }
 
   if (error) return <div>Failed to load</div>;

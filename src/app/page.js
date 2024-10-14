@@ -1,5 +1,8 @@
+import React, { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import Navigation from './components/navigation';
+import SearchBar from './components/searchBar';
+import Loading from './components/loading';
 
 const Carousel = dynamic(() => import('./components/carousel'), { ssr: false });
 
@@ -33,10 +36,19 @@ export default async function Home() {
   return (
     <div className="min-h-screen p-4 sm:p-8 pb-20 sm:pb-20 font-[family-name:var(--font-geist-sans)] text-white bg-black select-none">
       <Navigation />
-      <Carousel data={moviesData} title="Movies" isMovie={true} />
-      <Carousel data={tvData} title="TV Shows" isMovie={false} />
-      <Carousel data={musicMoviesData} title="Music Movies" isMovie={true} />
-      <Carousel data={sciFiMoviesData} title="Sci-Fi Movies" isMovie={true} />
+      <SearchBar />
+      <Suspense fallback={<Loading />}>
+        <Carousel data={moviesData} title="Movies" isMovie={true} />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Carousel data={tvData} title="TV Shows" isMovie={false} />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Carousel data={musicMoviesData} title="Music Movies" isMovie={true} />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Carousel data={sciFiMoviesData} title="Sci-Fi Movies" isMovie={true} />
+      </Suspense>
     </div>
   );
 }

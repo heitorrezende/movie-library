@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const Carousel = ({ data, title, isMovie }) => {
   return (
-    <div className="mb-16">
+      <div className="mb-16">
       <h1 className="text-3xl font-bold mb-8">{title}</h1>
       <Swiper
         modules={[Navigation]}
@@ -49,6 +49,7 @@ const Carousel = ({ data, title, isMovie }) => {
         ))}
       </Swiper>
     </div>
+
   );
 };
 
